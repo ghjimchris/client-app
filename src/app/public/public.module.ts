@@ -6,6 +6,8 @@ import {DrugComponent} from './drug/drug.component';
 import {RouterModule} from '@angular/router';
 import {NavComponent} from './nav/nav.component';
 import {HomeComponent} from './home/home.component';
+import {HttpService} from '../http.service';
+import { UserComponent } from './user/user.component';
 
 let routes = [
   {
@@ -21,11 +23,15 @@ let routes = [
   declarations: [PublicComponent,
     DrugComponent,
     NavComponent,
-    HomeComponent],
+    HomeComponent,
+    UserComponent],
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+  ],
+  providers: [
+    HttpService
   ]
 })
 export class PublicModule {
